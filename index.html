@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sistema de Urna Eletrônica</title>
+    <link rel="stylesheet" href="css/style.css"> </head>
+</head>
+
+<body>
+    <div class="header">
+        <h1>URNA <span>ELETRÔNICA</span></h1>
+        <h3>Sistema de Votação</h3>
+    </div>
+    <div class="alert">
+        <section class="container-seguro">
+            <div class="seguro">
+                <i class="bi bi-shield-fill-check"></i>
+                <text>
+                    <h2><span class="text-green">Sistema seguro e transparente</span></h2>
+                    <p>Todos os votos são registrados com segurança</p>
+                </text>
+            </div>
+            <div class="number">
+                <i class="bi bi-pie-chart-fill"></i>
+                <text>
+                    <h2>Total de Candidatos</h2>
+                    <span class="green"><p id="totalCandidatos">0</p></span>
+                </text>
+            </div>
+        </section>
+    </div>
+
+    <div class="painel">
+        <section class="container">
+            <div class="informacao">
+    <i class="bi bi-person-fill"></i>
+
+    <div class="dados">
+        <h2>Cadastro de Candidatos</h2>
+        <p>Preencha os dados do candidato</p>
+    </div>
+</div>
+            <div class="form">
+    <i class="bi bi-person-fill"></i>
+
+    <div class="dados">
+        <label for="nome">Nome do candidato</label>
+        <input type="text" id="nome" placeholder="Digite o nome">
+    </div>
+</div>
+            <div class="form">
+    <i class="bi bi-hash"></i>
+
+    <div class="dados">
+        <label for="numero">Número do candidato</label>
+        <input type="number" id="numero" placeholder="Digite o número">
+    </div>
+</div>
+            <div class="form">
+    <i class="bi bi-geo-alt-fill"></i>
+
+    <div class="dados">
+        <label for="cep">CEP</label>
+
+        <div class="linha">
+            <input type="text" id="cep" placeholder="00000000">
+
+            <button class="buscar" onclick="consultar()">
+                <i class="bi bi-search"></i> Buscar CEP
+            </button>
+        </div>
+    </div>
+</div>
+            <div class="form">
+    <i class="bi bi-signpost-fill"></i>
+
+    <div class="dados">
+        <label for="rua">Rua</label>
+        <input type="text" id="rua" readonly>
+    </div>
+</div>
+            <div class="form">
+    <i class="bi bi-building-fill"></i>
+
+    <div class="dados">
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" readonly>
+    </div>
+</div>
+            <div class="linha">
+
+    <div class="dados-linha cidade">
+        <div class="form">
+            <i class="bi bi-buildings-fill"></i>
+
+            <div class="dados">
+                <label>Cidade</label>
+                <input type="text" id="cidade" readonly>
+            </div>
+        </div>
+    </div>
+
+    <div class="dados-linha estado">
+        <div class="form">
+            <i class="bi bi-flag-fill"></i>
+
+            <div class="dados">
+                <label>Estado</label>
+                <input type="text" id="estado" readonly>
+            </div>
+        </div>
+    </div>
+
+</div>
+            <button class="cadastrar" onclick="cadastrarCandidato()">
+                <i class="bi bi-person-plus-fill"></i>Cadastrar Candidato
+            </button>
+        </section>
+
+
+        <section class="container-yellow">
+            <div class="informacao">
+                <i class="fa-solid fa-box-archive"></i>
+                <text>
+                    <h2>Votação</h2>
+                    <p>Digite o número do candidato</p>
+                </text>
+            </div>
+            <div class="votacao">
+                <h3>Número do Candidato</h3>
+                <input class="campo-votar" type="text" id="numeroVoto" placeholder="000">
+            </div>
+
+            <div class="info">
+                <i class="bi bi-info"></i>
+                <div class="dados">
+                    <p>Digite apenas o número do candidato e clique em Votar para confirmar.</p>
+                </div>
+            </div>
+            <button class="button-votar" onclick="votar()">
+                <i class="fa-solid fa-box-archive"></i>Votar
+            </button>
+        </section>
+
+
+        <section class="container">
+            <div class="informacao">
+                <i class="bi bi-bar-chart-fill"></i>
+                <text>
+                    <h2>Resultado da Eleição</h2>
+                    <p>Total de votos por candidato</p>
+                </text>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do candidato</th>
+                        <th>Número</th>
+                        <th>Votos</th>
+                    </tr>
+                </thead>
+                <tbody id="resultado">
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div class="footer">
+        <section class="container-seguro">
+            <div class="seguro">
+                <i class="bi bi-lock-fill"></i>
+                <text>
+                    <h2><span class="text-green">Sistema seguro e transparente</span></h2>
+                    <p>Todos os votos são registrados com segurança</p>
+                </text>
+            </div>
+            <div class="number">
+                <text>
+                    <h2>Total de Candidatos</h2>
+                    <span class="green"><p id="totalCandidatos">0</p></span>
+                </text>
+            </div>
+        </section>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
