@@ -95,7 +95,7 @@ Isso permite que os dados permaneçam salvos entre diferentes sessões do navega
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/myrellasilvinha/Sistema-de-Urna-Eletronica.git
+git clone https://github.com/myrellasilvinha/Urna-Eletronica.git
 ```
 
 2. Abra o arquivo `index.html` em qualquer navegador moderno.
