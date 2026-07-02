@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Sistema de Urna Eletrônica</title>
-    <link rel="stylesheet" href="css/style.css"> </head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 </head>
 
 <body>
@@ -28,7 +29,9 @@
                 <i class="bi bi-pie-chart-fill"></i>
                 <text>
                     <h2>Total de Candidatos</h2>
-                    <span class="green"><p id="totalCandidatos">0</p></span>
+                    <span class="green">
+                        <p id="totalCandidatos">0</p>
+                    </span>
                 </text>
             </div>
         </section>
@@ -68,10 +71,9 @@
 
                     <div class="linha">
                         <input type="text" id="cep" placeholder="00000000">
-
                         <button class="buscar" onclick="consultar()">
-                <i class="bi bi-search"></i> Buscar CEP
-            </button>
+                            <i class="bi bi-search"></i> <span id="text">Buscar CEP</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -171,19 +173,19 @@
 
     <div class="footer">
         <section class="container-seguro">
-            <div class="seguro">
+            <div class="seguro-footer">
                 <i class="bi bi-lock-fill"></i>
                 <text>
-                    <h2><span class="text-green">Sistema seguro e transparente</span></h2>
-                    <p>Todos os votos são registrados com segurança</p>
+                    <h2><span class="text-green">Sistema oficial e auditável</span></h2>
+                    <p>Garantimos a segurançadade de todos os votos.</p>
                 </text>
             </div>
-            <div class="number">
+            <!--<div class="number">
                 <text>
                     <h2>Total de Candidatos</h2>
                     <span class="green"><p id="totalCandidatos">0</p></span>
                 </text>
-            </div>
+            </div>-->
         </section>
     </div>
     <script src="js/script.js"></script>
