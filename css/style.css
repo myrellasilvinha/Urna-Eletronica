@@ -103,7 +103,8 @@ h3 {
 }
 
 .seguro {
-    min-width: 70%;
+    flex: 7;
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -111,7 +112,8 @@ h3 {
 }
 
 .number {
-    min-width: 30%;
+    flex: 3;
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -150,7 +152,7 @@ h3 {
     color: var(--white-color);
 }
 
-.painel .container-yellow > .informacao > i {
+.painel .container-yellow>.informacao>i {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -206,33 +208,33 @@ h3 {
     color: var(--green-color);
 }
 
-.linha{
+.linha {
     display: flex;
     gap: 15px;
 }
 
-.dados-linha.cidade{
+.dados-linha.cidade {
     flex: 3;
 }
 
-.dados-linha.estado{
+.dados-linha.estado {
     flex: 2;
 }
 
-.form{
+.form {
     display: flex;
     gap: 15px;
     margin-top: 20px;
     align-items: flex-start;
 }
 
-.dados{
+.dados {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.dados input{
+.dados input {
     width: 100%;
 }
 
@@ -276,22 +278,28 @@ input {
 
 input:focus {
     border-color: var(--green-color);
-    box-shadow: 0 0 8px rgba(6,90,49,.25);
+    box-shadow: 0 0 8px rgba(6, 90, 49, .25);
 }
 
 .buscar {
     display: flex;
     align-items: center;
     justify-content: start;
+    flex-shrink: 0;
     width: 150px;
-    min-width: 150px;
     background: #edf2ed;
     color: var(--green-color);
     height: 30px;
     margin-left: 0;
 }
 
-i.bi.bi-search{
+.buscar #text {
+    display: flex;
+    align-items: center;
+    color: var(--green-color);
+}
+
+i.bi.bi-search {
     width: 22px;
     height: 22px;
     padding: 15px;
@@ -301,6 +309,7 @@ i.bi.bi-search{
     font-size: 15px;
     color: var(--green-color);
 }
+
 
 /* Botões */
 
@@ -336,7 +345,7 @@ button {
     transition: .3s;
 }
 
-i.bi.bi-person-plus-fill{
+i.bi.bi-person-plus-fill {
     width: 30px;
     height: 45px;
     padding-right: 8px;
@@ -346,6 +355,7 @@ i.bi.bi-person-plus-fill{
     font-size: 20px;
     color: var(--white-color);
 }
+
 
 /* Demais botões */
 
@@ -359,6 +369,7 @@ button:not(:first-of-type):hover {
 
 
 /* Campo votação */
+
 .votacao {
     width: 100%;
     padding: 25px;
@@ -407,7 +418,7 @@ button:not(:first-of-type):hover {
     color: var(--font-gray-color);
 }
 
-.info i{
+.info i {
     height: 40px;
     min-width: 40px;
     border-radius: 50%;
@@ -483,7 +494,6 @@ tr:hover {
     background: #edf8f0;
 }
 
-
 .footer {
     display: flex;
     width: 95%;
@@ -491,7 +501,7 @@ tr:hover {
     gap: 20px;
     background: var(--white-color);
     border-radius: 18px;
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
     margin-bottom: 30px;
@@ -502,7 +512,7 @@ tr:hover {
     flex: 1;
 }
 
-.seguro {
+.seguro-footer {
     min-width: 70%;
     display: flex;
     align-items: center;
@@ -531,14 +541,79 @@ tr:hover {
 }
 
 
-/* Responsividade */
+/* RESPONSIVIDADE */
+
+@media (min-width: 1400px) {
+
+    .header,
+    .alert,
+    .painel,
+    .footer {
+        max-width: 1500px;
+    }
+}
+
+@media (max-width:1200px) {
+    .painel {
+        gap: 20px;
+    }
+
+    .container,
+    .container-yellow {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
 
 @media(max-width:1100px) {
     .painel {
         flex-direction: column;
     }
+
     .container {
         width: 100%;
+    }
+}
+
+@media (max-width:992px) {
+    .painel {
+        flex-direction: column;
+    }
+
+    .container,
+    .container-yellow {
+        width: 100%;
+    }
+
+    .alert,
+    .footer {
+        width: 95%;
+    }
+}
+
+@media (max-width:768px) {
+    .container-seguro {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .seguro {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        min-width: 100%;
+    }
+
+    .number {
+        margin-left: 0;
+        min-width: 100%;
+    }
+
+    .linha {
+        flex: 1;
     }
 }
 
@@ -546,11 +621,144 @@ tr:hover {
     body {
         padding: 15px;
     }
+
     h1 {
         font-size: 26px;
-        text-align: center;
     }
+
     #numeroVoto {
         font-size: 30px;
+    }
+}
+
+@media (max-width:576px) {
+    body {
+        padding: 12px;
+    }
+
+    .header {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .informacao i,
+    .alert i,
+    .footer i,
+    .painel .container i,
+    .painel .container-yellow>.informacao>i,
+    .painel .form i {
+        min-width: 45px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .info i {
+        min-width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .form {
+        gap: 10px;
+    }
+
+    .cadastrar,
+    .button-votar {
+        height: 45px;
+    }
+
+    #numeroVoto {
+        height: 80px;
+        font-size: 45px;
+    }
+}
+
+@media (max-width:400px) {
+    .header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    p,
+    label {
+        font-size: 14px;
+    }
+
+    .form {
+        flex: 1;
+    }
+
+    .painel .form i {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    i.bi.bi-search {
+        min-width: 22px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .dados {
+        width: 100%;
+    }
+
+    .buscar {
+        justify-content: center;
+        font-size: 0;
+        width: 50px;
+        min-width: 50px;
+    }
+
+    #numeroVoto {
+        font-size: 36px;
+        letter-spacing: 3px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width:320px) {
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .container,
+    .container-yellow,
+    .alert,
+    .footer {
+        padding: 15px;
+    }
+
+    #numeroVoto {
+        font-size: 28px;
     }
 }
